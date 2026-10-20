@@ -1,0 +1,28 @@
+$ vitest run
+
+ RUN  v3.2.4 C:/Users/Administrator/Documents/ChatGPT/web3/contributions/genlayer-2026-10-21/profile10/projects/access-route/frontend
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain.test.ts [ tests/domain.test.ts ]
+Error: Cannot find module '../src/domain' imported from 'C:/Users/Administrator/Documents/ChatGPT/web3/contributions/genlayer-2026-10-21/profile10/projects/access-route/frontend/tests/domain.test.ts'
+ ❯ tests/domain.test.ts:2:1
+      1| import {expect,it} from 'vitest';
+      2| import {edgeState,routeDisplay} from '../src/domain';
+       | ^
+      3| import {completeWrite} from '../src/core';
+      4| import {TransactionStatus,ExecutionResult} from 'genlayer-js/types';
+
+Caused by: Error: Failed to load url ../src/domain (resolved id: ../src/domain) in C:/Users/Administrator/Documents/ChatGPT/web3/contributions/genlayer-2026-10-21/profile10/projects/access-route/frontend/tests/domain.test.ts. Does the file exist?
+ ❯ loadAndTransform node_modules/.pnpm/vite@7.1.12/node_modules/vite/dist/node/chunks/config.js:26036:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  02:14:57
+   Duration  990ms (transform 67ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 432ms)
+
+[ELIFECYCLE] Test failed. See above for more details.

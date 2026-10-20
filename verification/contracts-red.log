@@ -1,0 +1,465 @@
+WARNING: File `gltest.config.yaml` not found in the current directory, using default config, create a `gltest.config.yaml` file to manage multiple networks
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['localnet', 'studionet', 'testnet_asimov', 'testnet_bradbury']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False
+FFFFFFFFFFFFFFFF                                                         [100%]
+================================== FAILURES ===================================
+_______________________ test_owner_and_immutable_graph ________________________
+
+route = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CE668A0>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_bob = Address("0x81b637d8fCD2C6da6359E6963113a1170de795e4")
+
+    def test_owner_and_immutable_graph(route,direct_vm,direct_bob):
+>       publish(route)
+
+access-route\tests\test_contract.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+access-route\tests\test_contract.py:16: in publish
+    api(c,'publish_graph');c.publish_graph('demo','Campus demonstration','Step-free public passage',json.dumps(NODES),json.dumps(EDGES),60)
+    ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CE668A0>>
+name = 'publish_graph'
+
+>   def api(c,name):assert callable(getattr(c,name,None)), f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: publish_graph behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CE668A0>>, 'publish_graph', None)
+
+access-route\tests\test_contract.py:11: AssertionError
+_____________________ test_shortest_fresh_evidence_route ______________________
+
+route = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CF41010>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+
+    def test_shortest_fresh_evidence_route(route,direct_vm):
+>       publish(route);mock(direct_vm)
+        ^^^^^^^^^^^^^^
+
+access-route\tests\test_contract.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+access-route\tests\test_contract.py:16: in publish
+    api(c,'publish_graph');c.publish_graph('demo','Campus demonstration','Step-free public passage',json.dumps(NODES),json.dumps(EDGES),60)
+    ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CF41010>>
+name = 'publish_graph'
+
+>   def api(c,name):assert callable(getattr(c,name,None)), f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: publish_graph behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CF41010>>, 'publish_graph', None)
+
+access-route\tests\test_contract.py:11: AssertionError
+_______________ test_expiry_excludes_edges_and_refresh_appends ________________
+
+route = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CFBA4E0>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+
+    def test_expiry_excludes_edges_and_refresh_appends(route,direct_vm):
+>       publish(route);mock(direct_vm);route.assess_edge('demo','ac')
+        ^^^^^^^^^^^^^^
+
+access-route\tests\test_contract.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+access-route\tests\test_contract.py:16: in publish
+    api(c,'publish_graph');c.publish_graph('demo','Campus demonstration','Step-free public passage',json.dumps(NODES),json.dumps(EDGES),60)
+    ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CFBA4E0>>
+name = 'publish_graph'
+
+>   def api(c,name):assert callable(getattr(c,name,None)), f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: publish_graph behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061CFBA4E0>>, 'publish_graph', None)
+
+access-route\tests\test_contract.py:11: AssertionError
+______________ test_closed_and_unknown_edges_never_form_a_route _______________
+
+route = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D0423C0>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+
+    def test_closed_and_unknown_edges_never_form_a_route(route,direct_vm):
+>       publish(route);mock(direct_vm,'CLOSED','RESTRICTION');route.assess_edge('demo','ac')
+        ^^^^^^^^^^^^^^
+
+access-route\tests\test_contract.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+access-route\tests\test_contract.py:16: in publish
+    api(c,'publish_graph');c.publish_graph('demo','Campus demonstration','Step-free public passage',json.dumps(NODES),json.dumps(EDGES),60)
+    ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D0423C0>>
+name = 'publish_graph'
+
+>   def api(c,name):assert callable(getattr(c,name,None)), f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: publish_graph behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D0423C0>>, 'publish_graph', None)
+
+access-route\tests\test_contract.py:11: AssertionError
+_______________________ test_missing_source_is_unknown ________________________
+
+route = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D07E090>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+
+    def test_missing_source_is_unknown(route,direct_vm):
+>       publish(route);direct_vm.mock_web('.*',{'status':404,'body':'missing'});route.assess_edge('demo','ac')
+        ^^^^^^^^^^^^^^
+
+access-route\tests\test_contract.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+access-route\tests\test_contract.py:16: in publish
+    api(c,'publish_graph');c.publish_graph('demo','Campus demonstration','Step-free public passage',json.dumps(NODES),json.dumps(EDGES),60)
+    ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D07E090>>
+name = 'publish_graph'
+
+>   def api(c,name):assert callable(getattr(c,name,None)), f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: publish_graph behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D07E090>>, 'publish_graph', None)
+
+access-route\tests\test_contract.py:11: AssertionError
+________________ test_validator_rejects_forged_open_and_quote _________________
+
+route = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D186720>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+
+    def test_validator_rejects_forged_open_and_quote(route,direct_vm):
+>       publish(route);mock(direct_vm);route.assess_edge('demo','ac')
+        ^^^^^^^^^^^^^^
+
+access-route\tests\test_contract.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+access-route\tests\test_contract.py:16: in publish
+    api(c,'publish_graph');c.publish_graph('demo','Campus demonstration','Step-free public passage',json.dumps(NODES),json.dumps(EDGES),60)
+    ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D186720>>
+name = 'publish_graph'
+
+>   def api(c,name):assert callable(getattr(c,name,None)), f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: publish_graph behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D186720>>, 'publish_graph', None)
+
+access-route\tests\test_contract.py:11: AssertionError
+__________________ test_invalid_topology_and_weight_rejected __________________
+
+route = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D2111C0>>
+
+    def test_invalid_topology_and_weight_rejected(route):
+>       api(route,'publish_graph')
+
+access-route\tests\test_contract.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D2111C0>>
+name = 'publish_graph'
+
+>   def api(c,name):assert callable(getattr(c,name,None)), f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: publish_graph behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D2111C0>>, 'publish_graph', None)
+
+access-route\tests\test_contract.py:11: AssertionError
+_____________ test_equal_cost_paths_use_edge_identifier_tie_break _____________
+
+route = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D2B58E0>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+
+    def test_equal_cost_paths_use_edge_identifier_tie_break(route,direct_vm):
+>       api(route,'publish_graph');edges=[dict(EDGES[2],id='z',minutes=5),EDGES[0],EDGES[1]]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+access-route\tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D2B58E0>>
+name = 'publish_graph'
+
+>   def api(c,name):assert callable(getattr(c,name,None)), f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: publish_graph behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.AccessRoute object at 0x000002061D2B58E0>>, 'publish_graph', None)
+
+access-route\tests\test_contract.py:11: AssertionError
+____________ test_queue_and_cancellation_preserve_first_join_order ____________
+
+event = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D336330>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_alice = Address("0x2bd806c97F0e00aF1a1fC3328fA763a9269723C8")
+direct_bob = Address("0x81b637d8fCD2C6da6359E6963113a1170de795e4")
+direct_charlie = Address("0xb9DD960c1753459a78115D3cB845a57d924b6877")
+
+    def test_queue_and_cancellation_preserve_first_join_order(event,direct_vm,direct_alice,direct_bob,direct_charlie):
+>       create(event);join(event,direct_vm,[direct_alice,direct_bob,direct_charlie])
+        ^^^^^^^^^^^^^
+
+event-fallback\tests\test_contract.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+event-fallback\tests\test_contract.py:14: in create
+    api(c,'create_event');c.create_event('demo','Garden reading','Garden','Hall',2,1,START+60,START+120,START+600,300,'Heavy rain during this event triggers the hall plan.',json.dumps([URL]))
+    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D336330>>
+name = 'create_event'
+
+>   def api(c,name):assert callable(getattr(c,name,None)),f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: create_event behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D336330>>, 'create_event', None)
+
+event-fallback\tests\test_contract.py:9: AssertionError
+______________ test_backup_capacity_allocates_by_queue_not_model ______________
+
+event = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D3774A0>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_alice = Address("0x2bd806c97F0e00aF1a1fC3328fA763a9269723C8")
+direct_bob = Address("0x81b637d8fCD2C6da6359E6963113a1170de795e4")
+
+    def test_backup_capacity_allocates_by_queue_not_model(event,direct_vm,direct_alice,direct_bob):
+>       create(event);join(event,direct_vm,[direct_alice,direct_bob]);direct_vm.warp('2026-10-21T00:02:00Z');mock(direct_vm);event.decide_event('demo')
+        ^^^^^^^^^^^^^
+
+event-fallback\tests\test_contract.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+event-fallback\tests\test_contract.py:14: in create
+    api(c,'create_event');c.create_event('demo','Garden reading','Garden','Hall',2,1,START+60,START+120,START+600,300,'Heavy rain during this event triggers the hall plan.',json.dumps([URL]))
+    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D3774A0>>
+name = 'create_event'
+
+>   def api(c,name):assert callable(getattr(c,name,None)),f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: create_event behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D3774A0>>, 'create_event', None)
+
+event-fallback\tests\test_contract.py:9: AssertionError
+______________________ test_clear_uses_primary_capacity _______________________
+
+event = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D49F650>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_alice = Address("0x2bd806c97F0e00aF1a1fC3328fA763a9269723C8")
+direct_bob = Address("0x81b637d8fCD2C6da6359E6963113a1170de795e4")
+direct_charlie = Address("0xb9DD960c1753459a78115D3cB845a57d924b6877")
+
+    def test_clear_uses_primary_capacity(event,direct_vm,direct_alice,direct_bob,direct_charlie):
+>       create(event);join(event,direct_vm,[direct_alice,direct_bob,direct_charlie]);direct_vm.warp('2026-10-21T00:02:00Z');mock(direct_vm,'CLEAR','NO_TRIGGER');event.decide_event('demo')
+        ^^^^^^^^^^^^^
+
+event-fallback\tests\test_contract.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+event-fallback\tests\test_contract.py:14: in create
+    api(c,'create_event');c.create_event('demo','Garden reading','Garden','Hall',2,1,START+60,START+120,START+600,300,'Heavy rain during this event triggers the hall plan.',json.dumps([URL]))
+    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D49F650>>
+name = 'create_event'
+
+>   def api(c,name):assert callable(getattr(c,name,None)),f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: create_event behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D49F650>>, 'create_event', None)
+
+event-fallback\tests\test_contract.py:9: AssertionError
+___________ test_stale_evidence_forces_hold_and_retry_keeps_history ___________
+
+event = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D4CAB70>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_alice = Address("0x2bd806c97F0e00aF1a1fC3328fA763a9269723C8")
+
+    def test_stale_evidence_forces_hold_and_retry_keeps_history(event,direct_vm,direct_alice):
+>       create(event);join(event,direct_vm,[direct_alice]);direct_vm.warp('2026-10-21T00:02:00Z');mock(direct_vm,issued=START-500);event.decide_event('demo')
+        ^^^^^^^^^^^^^
+
+event-fallback\tests\test_contract.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+event-fallback\tests\test_contract.py:14: in create
+    api(c,'create_event');c.create_event('demo','Garden reading','Garden','Hall',2,1,START+60,START+120,START+600,300,'Heavy rain during this event triggers the hall plan.',json.dumps([URL]))
+    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D4CAB70>>
+name = 'create_event'
+
+>   def api(c,name):assert callable(getattr(c,name,None)),f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: create_event behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D4CAB70>>, 'create_event', None)
+
+event-fallback\tests\test_contract.py:9: AssertionError
+__________________ test_phase_boundaries_and_immutable_event __________________
+
+event = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D54FB90>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_alice = Address("0x2bd806c97F0e00aF1a1fC3328fA763a9269723C8")
+
+    def test_phase_boundaries_and_immutable_event(event,direct_vm,direct_alice):
+>       create(event)
+
+event-fallback\tests\test_contract.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+event-fallback\tests\test_contract.py:14: in create
+    api(c,'create_event');c.create_event('demo','Garden reading','Garden','Hall',2,1,START+60,START+120,START+600,300,'Heavy rain during this event triggers the hall plan.',json.dumps([URL]))
+    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D54FB90>>
+name = 'create_event'
+
+>   def api(c,name):assert callable(getattr(c,name,None)),f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: create_event behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D54FB90>>, 'create_event', None)
+
+event-fallback\tests\test_contract.py:9: AssertionError
+_________ test_missing_source_holds_and_expired_roster_is_not_current _________
+
+event = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D66FF50>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_alice = Address("0x2bd806c97F0e00aF1a1fC3328fA763a9269723C8")
+
+    def test_missing_source_holds_and_expired_roster_is_not_current(event,direct_vm,direct_alice):
+>       create(event);join(event,direct_vm,[direct_alice]);direct_vm.warp('2026-10-21T00:02:00Z');direct_vm.mock_web('.*',{'status':404,'body':'missing'});event.decide_event('demo')
+        ^^^^^^^^^^^^^
+
+event-fallback\tests\test_contract.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+event-fallback\tests\test_contract.py:14: in create
+    api(c,'create_event');c.create_event('demo','Garden reading','Garden','Hall',2,1,START+60,START+120,START+600,300,'Heavy rain during this event triggers the hall plan.',json.dumps([URL]))
+    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D66FF50>>
+name = 'create_event'
+
+>   def api(c,name):assert callable(getattr(c,name,None)),f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: create_event behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D66FF50>>, 'create_event', None)
+
+event-fallback\tests\test_contract.py:9: AssertionError
+________ test_validator_rederives_trigger_and_rejects_forged_citation _________
+
+event = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D6F51C0>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+
+    def test_validator_rederives_trigger_and_rejects_forged_citation(event,direct_vm):
+>       create(event);direct_vm.warp('2026-10-21T00:02:00Z');mock(direct_vm);event.decide_event('demo')
+        ^^^^^^^^^^^^^
+
+event-fallback\tests\test_contract.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+event-fallback\tests\test_contract.py:14: in create
+    api(c,'create_event');c.create_event('demo','Garden reading','Garden','Hall',2,1,START+60,START+120,START+600,300,'Heavy rain during this event triggers the hall plan.',json.dumps([URL]))
+    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D6F51C0>>
+name = 'create_event'
+
+>   def api(c,name):assert callable(getattr(c,name,None)),f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: create_event behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D6F51C0>>, 'create_event', None)
+
+event-fallback\tests\test_contract.py:9: AssertionError
+_________________________ test_malformed_model_holds __________________________
+
+event = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D7927B0>>
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+
+    def test_malformed_model_holds(event,direct_vm):
+>       create(event);direct_vm.warp('2026-10-21T00:02:00Z');direct_vm.mock_web('.*',{'status':200,'body':BODY});direct_vm.mock_llm('.*','{"condition":"TRIGGERED","reason":"ADVERSE_CONDITIONS","issued_at":[true],"citations":[]}');event.decide_event('demo')
+        ^^^^^^^^^^^^^
+
+event-fallback\tests\test_contract.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+event-fallback\tests\test_contract.py:14: in create
+    api(c,'create_event');c.create_event('demo','Garden reading','Garden','Hall',2,1,START+60,START+120,START+600,300,'Heavy rain during this event triggers the hall plan.',json.dumps([URL]))
+    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = <CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D7927B0>>
+name = 'create_event'
+
+>   def api(c,name):assert callable(getattr(c,name,None)),f'{name} behavior not implemented'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: create_event behavior not implemented
+E   assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(<CalldataProxy for <_contract_contract.EventFallback object at 0x000002061D7927B0>>, 'create_event', None)
+
+event-fallback\tests\test_contract.py:9: AssertionError
+=========================== short test summary info ===========================
+FAILED access-route/tests/test_contract.py::test_owner_and_immutable_graph - ...
+FAILED access-route/tests/test_contract.py::test_shortest_fresh_evidence_route
+FAILED access-route/tests/test_contract.py::test_expiry_excludes_edges_and_refresh_appends
+FAILED access-route/tests/test_contract.py::test_closed_and_unknown_edges_never_form_a_route
+FAILED access-route/tests/test_contract.py::test_missing_source_is_unknown - ...
+FAILED access-route/tests/test_contract.py::test_validator_rejects_forged_open_and_quote
+FAILED access-route/tests/test_contract.py::test_invalid_topology_and_weight_rejected
+FAILED access-route/tests/test_contract.py::test_equal_cost_paths_use_edge_identifier_tie_break
+FAILED event-fallback/tests/test_contract.py::test_queue_and_cancellation_preserve_first_join_order
+FAILED event-fallback/tests/test_contract.py::test_backup_capacity_allocates_by_queue_not_model
+FAILED event-fallback/tests/test_contract.py::test_clear_uses_primary_capacity
+FAILED event-fallback/tests/test_contract.py::test_stale_evidence_forces_hold_and_retry_keeps_history
+FAILED event-fallback/tests/test_contract.py::test_phase_boundaries_and_immutable_event
+FAILED event-fallback/tests/test_contract.py::test_missing_source_holds_and_expired_roster_is_not_current
+FAILED event-fallback/tests/test_contract.py::test_validator_rederives_trigger_and_rejects_forged_citation
+FAILED event-fallback/tests/test_contract.py::test_malformed_model_holds - As...
+16 failed in 1.73s

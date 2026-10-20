@@ -1,0 +1,12 @@
+{
+  "status": "contract_deployed_frontend_and_live_workflow_pending",
+  "network": "GenLayer Studio",
+  "chainId": 61999,
+  "contractAddress": "0x8667862a0d79F4D915BC069816E7CB00B652fE06",
+  "deploymentTransaction": "0x1c78aa0be122ba3101fdfa25b003a102def0268b3e1b3634be3adf4230763372",
+  "sourceSha256": "53638457889f50334b47f11f6945de7ab610ef6609436c1c8e5a25dabd13613f",
+  "deploymentTransactionVerified": true,
+  "executionResult": "SUCCESS",
+  "frontendUrl": null,
+  "walletLifecycleVerified": false
+}
